@@ -1,0 +1,37 @@
+{
+  "entities": {
+    "Candidate": {
+      "title": "Candidate",
+      "description": "An applicant file tracking agency placement status",
+      "type": "object",
+      "properties": {
+        "passport": { "type": "string", "description": "The uppercase unique passport number of the candidate" },
+        "name": { "type": "string", "description": "Full name of candidate" },
+        "job": { "type": "string", "description": "Job description or role matching" },
+        "destination": { "type": "string", "description": "Target country of placement" },
+        "status": { "type": "string", "enum": ["applied", "medical", "interview", "matched", "visa", "ready"] },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["passport", "name", "job", "destination", "status"]
+    },
+    "Setting": {
+      "title": "Setting",
+      "description": "CMS configurations for translations or images",
+      "type": "object",
+      "properties": {
+        "data": { "type": "object", "description": "Raw settings dictionary data" }
+      },
+      "required": ["data"]
+    }
+  },
+  "firestore": {
+    "/candidates/{passport}": {
+      "schema": "Candidate",
+      "description": "Database of registered candidate pipelines"
+    },
+    "/settings/{settingId}": {
+      "schema": "Setting",
+      "description": "CMS settings for translations and images"
+    }
+  }
+}

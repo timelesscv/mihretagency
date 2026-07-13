@@ -1,0 +1,8 @@
+{
+  "name": "Mihret Agency",
+  "description": "Ethical and legal overseas employment agency connecting Ethiopian workers with verified households and employers in Gulf countries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
